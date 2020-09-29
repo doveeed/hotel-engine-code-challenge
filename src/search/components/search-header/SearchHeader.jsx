@@ -15,11 +15,13 @@ const SearchHeader = ({query}) => {
         setSearchQuery(event.target.value);
     }
 
-    return (<div>
+    return (<div className="search-header">
         <input
+            className="search-header-input"
+            autocomplete="off"
             type="search"
             id="search-github"
-            aria-label="Press enter to search GitHub"
+            aria-label="Press enter to search GitHub repositories"
             placeholder="Search GitHub"
             onKeyDown={handleKeyDown}
             onChange={handleChange}
