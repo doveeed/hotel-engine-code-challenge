@@ -21,13 +21,13 @@
         cursor: pointer;
         display: flex;
         width: 100%;
-        border: 1px solid black;
+        border: 1px solid $black;
         border-radius: 3px;
         height: 2rem;
         padding: 0 0.25rem;
 
         &:focus {
-            border: 2px solid black;
+            border: 2px solid $purple;
             outline: none;
         }
     }
@@ -36,20 +36,24 @@
         flex-direction: column;
         list-style: none;
         border-radius: 3px;
-        border: 1px solid black;
+        border: 1px solid $black;
         padding: 3px;
         margin-right: 2rem;
         width: 100%;
         max-width: 10rem;
         height: fit-content;
         
-        lh,li {
+        h3,li {
             padding: 0.5rem;
             border-radius: 3px;
+            display: flex;
+            align-items: center;
         }
 
-        lh {
-          font-weight: bold;  
+        h3 {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: bold;  
         }
 
         li {
@@ -57,7 +61,29 @@
             cursor: pointer;
             &:hover, &:focus {
                 background-color: lightgray;
+                color: $black;
             }
+
+            button {
+                margin-left: auto;
+                background: none;
+                cursor: pointer;
+                color: white;
+                outline: none;
+                border: 1px solid transparent;
+                border-radius: 3px;
+
+                &:focus {
+                    border: 1px solid white;
+                }
+            }
+        }
+    }
+
+    &-list-item {
+        &.selected {
+            background-color: $purple;
+            color: white;
         }
     }
 

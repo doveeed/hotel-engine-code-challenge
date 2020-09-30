@@ -1,13 +1,21 @@
 import React, { useState } from 'react';
 import { useHistory } from "react-router-dom";
+import { useQueryParams } from '../../hooks/useQueryParams';
+import { getSearchUrlFromParams } from '../../utils/utils';
 
 const SearchHeader = ({query}) => {
-    const history = useHistory();
     const [seachQuery, setSearchQuery] = useState(query);
+    const params = useQueryParams();
+    const history = useHistory();
+
 
     const handleKeyDown = (event) => {
         if (event.key === 'Enter') {
-            history.push(`/search?q=${encodeURIComponent(event.target.value)}`)
+            const newParams = {
+                ...params,
+                q: event.target.value
+            }
+            history.push(getSearchUrlFromParams(newParams));
         }
     };
 
@@ -18,7 +26,7 @@ const SearchHeader = ({query}) => {
     return (<div className="search-header">
         <input
             className="search-header-input"
-            autocomplete="off"
+            autoComplete="off"
             type="search"
             id="search-github"
             aria-label="Press enter to search GitHub repositories"

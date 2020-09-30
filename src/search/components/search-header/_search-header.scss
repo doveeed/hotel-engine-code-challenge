@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: row;
     padding: 1rem;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid $black;
 
     
 
@@ -12,7 +12,7 @@
     }
 
     .search-header-input {
-        border: 1px solid black;
+        border: 1px solid $black;
         border-radius: 3px;
         height: 2.5rem;
         padding: 0.25rem 0.5rem;
@@ -20,7 +20,7 @@
         width: 100%;
 
         &:focus {
-            border: 2px solid black;
+            border: 2px solid $purple;
             outline: none;
         }
 
