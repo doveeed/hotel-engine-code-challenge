@@ -14,6 +14,7 @@ const ResultsHeader = ({total}) => {
         const newParams = {
             ...params,
             sort,
+            page: '1',
         }
         history.push(getSearchUrlFromParams(newParams));
     }
@@ -22,6 +23,7 @@ const ResultsHeader = ({total}) => {
         const newParams = {
             ...params,
            language,
+           page: '1',
         }
         history.push(getSearchUrlFromParams(newParams));
     }

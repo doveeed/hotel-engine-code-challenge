@@ -13,7 +13,8 @@ const SearchHeader = ({query}) => {
         if (event.key === 'Enter') {
             const newParams = {
                 ...params,
-                q: event.target.value
+                q: event.target.value,
+                page: '1',
             }
             history.push(getSearchUrlFromParams(newParams));
         }

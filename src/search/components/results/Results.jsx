@@ -6,6 +6,7 @@ import ResultsSelector from '../results-selector/ResultsSelector';
 import { useQueryParams } from '../../hooks/useQueryParams';
 import { getSearchUrlFromParams } from '../../utils/utils';
 import { LANGUAGE_OPTIONS } from '../../utils/constants';
+import Pagination from '../pagination/Pagination';
 
 const Results = ({results}) => {
     const params = useQueryParams();
@@ -13,10 +14,10 @@ const Results = ({results}) => {
     const history = useHistory();
 
     const handleLanguageChange = (value) => {
-        console.log('DAH: value', value);
         const newParams = {
             ...params,
             language: value,
+            page: '1',
         }
         history.push(getSearchUrlFromParams(newParams));
     }
@@ -29,6 +30,7 @@ const Results = ({results}) => {
                 <div className="results-main">
                     <ResultsHeader total={results.total_count} />
                     { results && results.items && (<ResultsList items={results.items} />)}
+                    <Pagination totalItems={results.total_count}/>
                 </div>
                 </>
                 )

@@ -68,13 +68,13 @@
                 margin-left: auto;
                 background: none;
                 cursor: pointer;
-                color: white;
+                color: $white;
                 outline: none;
                 border: 1px solid transparent;
                 border-radius: 3px;
 
                 &:focus {
-                    border: 1px solid white;
+                    border: 1px solid $white;
                 }
             }
         }
@@ -83,7 +83,7 @@
     &-list-item {
         &.selected {
             background-color: $purple;
-            color: white;
+            color: $white;
         }
     }
 

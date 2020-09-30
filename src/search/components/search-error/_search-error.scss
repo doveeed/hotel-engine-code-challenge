@@ -1,0 +1,27 @@
+.search-error {
+    display: flex;
+    min-height: 2rem;
+    align-items: center;
+    background-color: $red;
+    color: $white;
+    font-size: 0.875rem;
+
+    &-message {
+        padding: 2rem 1rem;
+    }
+
+    button {
+        margin-right: 1rem;
+        margin-left: auto;
+        background: none;
+        outline: 1px solid transparent;
+        color: $white;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+
+        &:focus {
+            border: 1px solid $white;
+        }
+    }
+}
