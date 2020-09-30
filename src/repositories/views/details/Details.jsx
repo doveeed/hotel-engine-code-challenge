@@ -1,7 +1,7 @@
 import React from "react";
 import { useHistory, useLocation } from "react-router-dom";
-import DetailsBody from "../details-body/DetailsBody";
-import DetailsHeader from "../details-header/DetailsHeader";
+import DetailsBody from "./components/details-body/DetailsBody";
+import DetailsHeader from "./components/details-header/DetailsHeader";
 const Details = () => {
   const history = useHistory();
   const { state } = useLocation();

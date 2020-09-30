@@ -1,5 +1,6 @@
 @import './variables';
-@import './search/search';
+@import './repositories/views/details/details';
+@import './repositories/views/search/search';
 
 html, body {
     color: $black;

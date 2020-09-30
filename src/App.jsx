@@ -5,8 +5,8 @@ import {
   Route,
   Switch,
 } from "react-router-dom";
-import Details from "./search/components/details/Details";
-import Search from "./search/Search";
+import Details from "./repositories/views/details/Details";
+import Search from "./repositories/views/search/Search";
 import "./App.scss";
 
 function App() {
