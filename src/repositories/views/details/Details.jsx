@@ -10,11 +10,10 @@ const Details = () => {
     history.push("/search");
   }
 
-  const { repository } = state;
   return (
     <div className="details">
       <DetailsHeader />
-      <DetailsBody item={repository} />
+      <DetailsBody item={state.repository} />
     </div>
   );
 };

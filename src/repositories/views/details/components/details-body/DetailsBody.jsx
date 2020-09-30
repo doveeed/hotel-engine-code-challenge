@@ -1,7 +1,7 @@
 import React from "react";
 
 const DetailsBody = ({ item }) => {
-  const { full_name, ...others } = item;
+  const { name, owner,description, stargazers_count, language, ...others } = item;
 
   const getValue = (value) => {
     if (typeof value === "object") {
@@ -19,19 +19,25 @@ const DetailsBody = ({ item }) => {
   };
   return (
     <div className="details-body">
-      <div className="details-body-title">{full_name}</div>
+      <div className="details-body-title"><div>{name}</div><div className="details-body-language">{language}</div></div>
+      <div className="details-body-main">
+      <div className="details-body-owner">
+        <img src={owner.avatar_url} alt="Owner's avatar"></img>
+      </div>
       <div className="details-body-list">
-        {" "}
-        {Object.entries(others).map(([key, value]) => (
-          <div key={key} className="details-body-list-item">
-            <div className="details-body-list-item-key">
-              {getLabelFromKey(key)}
-            </div>
-            <div className="details-body-list-item-value">
-              {getValue(value)}
-            </div>
-          </div>
-        ))}
+        <div  className="details-body-list-item">
+            <div className="details-body-list-item-key">Owner:</div>
+            <div className="details-body-list-item-value">{owner.login}</div>
+        </div>
+        <div  className="details-body-list-item">
+            <div className="details-body-list-item-key">Stars:</div>
+            <div className="details-body-list-item-value">{stargazers_count}</div>
+        </div>
+        <div  className="details-body-list-item">
+            <div className="details-body-list-item-key">Description:</div>
+            <div className="details-body-list-item-value">{description}</div>
+        </div>
+      </div>
       </div>
     </div>
   );

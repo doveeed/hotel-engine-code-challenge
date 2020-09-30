@@ -14,14 +14,33 @@
         font-size: 1.25rem;
         margin-bottom: 1rem;
         width: 100%;
+        display: flex;
+    }
+
+    &-language {
+        border-radius: 30px;
+        background-color: $purple;
+        color: $white;
+        margin-left: auto;
+        font-size: 0.875rem;
+        padding: 0.25rem 0.5rem;
+    }
+
+    &-main {
+        display: flex;
+        flex-direction: column;
+        overflow: auto;
+    }
+
+    &-owner {
+        img {
+            width: 100%;
+        }
     }
 
     &-list {
         display: flex;
         flex-direction: column;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
         padding-bottom: 1rem;
     }
 
@@ -35,5 +54,21 @@
         font-weight: bold;
         flex-shrink: 0;
         padding-right: 1rem;
+    }
+
+    @media screen and (min-width: 768px) {
+        &-owner {
+            img {
+                max-width: 400px;
+            }
+        }
+
+        &-main {
+            flex-direction: row;
+        }
+        
+        &-list {
+            padding-left: 1rem;
+        }
     }
 }
