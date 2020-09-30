@@ -29,9 +29,9 @@ const Pagination = ({totalItems}) => {
     }
 
     return (<div className="pagination">
-        <button onClick={handlePreviousClick} className="pagination-button" disabled={disablePrevious}>Previous</button>
+        <button onClick={handlePreviousClick} className="button" disabled={disablePrevious}>Previous</button>
         <div className="pagination-current">Current page: {page}</div>
-        <button onClick={handleNextClick} className="pagination-button" disabled={disableNext}>Next</button>
+        <button onClick={handleNextClick} className="button" disabled={disableNext}>Next</button>
     </div>);
 }
 

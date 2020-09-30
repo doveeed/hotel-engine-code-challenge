@@ -6,6 +6,12 @@
     &-name {
         font-weight: bold;
         margin: 1rem 0 0.5rem 0;
+        cursor: pointer;
+
+        &:hover,&:focus {
+            color: $purple;
+            outline: none;
+        }
     }
 
     &-description {

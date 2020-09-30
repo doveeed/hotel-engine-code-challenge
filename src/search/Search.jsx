@@ -13,16 +13,13 @@ const Search = () => {
     const doSearch = async () => {
         if (q && q.length > 0) {
             const results = await fetch(`https://api.github.com/search/repositories?q=${encodeURIComponent(q)}${language ? `+language:${language}` : ''}&sort=${encodeURIComponent(sort)}&page=${page}&per_page=${per_page}`);
-
             const json = await results.json();
 
             if (results.ok) {
                 setSearchResults(json);
             } else {
                 setErrorMessage(json.message);
-            }
-
-            
+            }  
         }
     }
     useEffect(() => {

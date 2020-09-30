@@ -16,6 +16,12 @@
         handleChange(value);
       }
 
+      const handleListItemKeyDown = (event, value) => {
+        if (event.key === 'Enter') {
+          handleChange(value)
+        }
+      }
+
       const handleRemoveLanguageButtonClick = (event) => {
         event.stopPropagation();
         handleChange(null);
@@ -31,7 +37,15 @@
       ) : (<ul className={`results-selector-list ${className}`}>
             <h3>{labelText}</h3>
             { options.map(({itemValue, itemText}) => (
-              <li key={itemValue} className={`results-selector-list-item ${itemValue === value ? 'selected' : ''}`} onClick={() => {handleListItemClick(itemValue)}}>{itemText}{itemValue === value && (<button onClick={handleRemoveLanguageButtonClick}>x</button>)}</li>
+              <li
+                key={itemValue}
+                tabIndex={itemValue === value ? '-1': '0'}
+                className={`results-selector-list-item ${itemValue === value ? 'selected' : ''}`}
+                onClick={() => {handleListItemClick(itemValue)}}
+                onKeyDown={(event) => handleListItemKeyDown(event, itemValue)}
+              >
+                {itemText}{itemValue === value && (<button onClick={handleRemoveLanguageButtonClick}>x</button>)}
+              </li>
             ))}
           </ul>)
         );

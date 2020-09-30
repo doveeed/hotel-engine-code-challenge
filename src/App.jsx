@@ -14,11 +14,9 @@ function App() {
     <div className="app">
       <Router>
       <Switch>
-      <Route exact path="/">
-        <Redirect to="/search" />
-        </Route>
-        <Route path="/search" component={Search} />
-        <Route path="/details" component={Details} />
+        <Route exact path="/search" component={Search} />
+        <Route exact path="/details/:repositoryName" component={Details} />
+        <Route path="/"><Redirect to="/search" /></Route>
       </Switch>  
       </Router>
     </div>

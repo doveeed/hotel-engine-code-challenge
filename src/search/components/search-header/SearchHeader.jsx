@@ -4,7 +4,7 @@ import { useQueryParams } from '../../hooks/useQueryParams';
 import { getSearchUrlFromParams } from '../../utils/utils';
 
 const SearchHeader = ({query}) => {
-    const [seachQuery, setSearchQuery] = useState(query);
+    const [seachQuery, setSearchQuery] = useState(query ? query : '');
     const params = useQueryParams();
     const history = useHistory();
 
@@ -24,8 +24,9 @@ const SearchHeader = ({query}) => {
         setSearchQuery(event.target.value);
     }
 
-    return (<div className="search-header">
+    return (<div className="header search-header">
         <input
+            tabIndex="0"
             className="search-header-input"
             autoComplete="off"
             type="search"

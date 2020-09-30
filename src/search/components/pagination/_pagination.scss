@@ -10,17 +10,4 @@
         text-align: center;
         justify-content: center;
     }
-    &-button {
-        background: none;
-        outline: none;
-        border: 1px solid transparent;
-        border-radius: 3px;
-        cursor: pointer;
-        padding: 0.5rem;
-
-        &:focus {
-            background-color: $purple;
-            color: $white;
-        }
-    }
 }
